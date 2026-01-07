@@ -7,7 +7,7 @@ django.setup()
 from datacenter.models import Passcard  # noqa: E402
 
 if __name__ == '__main__':
-    passcards = Passcard.objects.all()
-    active_passcards = Passcard.objects.filter(is_active=True)
-    print('Всего пропусков: ', len(passcards))
-    print('Активных пропусков: ', len(active_passcards))
+    total_count = Passcard.objects.all().count()
+    active_count = Passcard.objects.filter(is_active=True).count()
+    print('Всего пропусков: ', total_count)
+    print('Активных пропусков: ', active_count)
